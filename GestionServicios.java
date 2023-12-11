@@ -121,33 +121,32 @@ do {
 
         System.out.println("Ingrese una palabra clave para buscar un servicio");
         String Busqueda = Escaner.nextLine();
-    
-         for(String Servicioss : Servicios){
-         if (Servicioss.contains(Busqueda)) {
-         System.out.println("\n**************************************");
-         System.out.println("*** se encontraron estos Servicios: ***" );
-         System.out.println("\n**************************************");
-          System.out.println( Servicioss);
-          System.out.println("\n-----------------------");	
-            System.out.println( "ingrese Enter para continuar");
-              Escaner.nextLine();
+		 
+        for(String servicio : Servicios){
+        if (servicio != null && servicio.contains(Busqueda)) {
+              
+              Recursos.titulo();
+           System.out.println("Gestion de Servicios -> Buscar Servicio");
+        System.out.println("***************************************");
+        System.out.println("*** se encontraron estos servicios: ***" );
+        System.out.println("***************************************");
+        System.out.println( servicio);
+       System.out.println("\n--------------------------------------------------");	
+                 System.out.println( "ingrese Enter para continuar");
+                Escaner.nextLine();
+        
+         }else{ System.out.println("No se encontro ningun cliente por: " + Busqueda );
+        System.out.println("Ingrese Enter para continuar..");
+        Escaner.nextLine();
+        }
+            
+      } 
+        
          
-             }else{         
-
-	                 Recursos.titulo();
-                System.out.println("Gestion de Servicios-> Buscar Servicio");
-
-               System.out.println("No se encontraron servicio por la palabra clave: " + Busqueda);   
-                System.out.println("Ingrese Enter para continuar..");    
-                    Escaner.nextLine();}
-             
-         }
-
-             
 
     }
 	break;
- 
+  
 		  default:
 		  if(!menu.equalsIgnoreCase("X")){
 		  System.out.println("===============================================");
