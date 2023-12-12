@@ -69,7 +69,7 @@ public class PracticoFinal {
     System.out.println("************************************************");
     System.out.println("** hubo un error, Verifique sus credenciales! **");
     System.out.println("************************************************");
-       System.out.println("Presione enter para salir sistema");
+       System.out.println("Presione enter para salir del sistema");
     Escaner.nextLine();
 }
 
