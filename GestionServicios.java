@@ -4,9 +4,6 @@ import java.util.ArrayList;
 public class GestionServicios {
 public  void Servicios(ArrayList<String> Servicios) {
 
-Scanner escaner = new Scanner (System.in);
-boolean Salir = false;
-
   Scanner Escaner = new Scanner(System.in);
   String menu = "";
 do {
@@ -119,29 +116,34 @@ do {
 
      System.out.println("Gestion de Servicios-> Buscar Servicio");
 
-        System.out.println("Ingrese una palabra clave para buscar un servicio");
-        String Busqueda = Escaner.nextLine();
-		 
-        for(String servicio : Servicios){
-        if (servicio != null && servicio.contains(Busqueda)) {
-              
-              Recursos.titulo();
-           System.out.println("Gestion de Servicios -> Buscar Servicio");
-        System.out.println("***************************************");
-        System.out.println("*** se encontraron estos servicios: ***" );
-        System.out.println("***************************************");
-        System.out.println( servicio);
-       System.out.println("\n--------------------------------------------------");	
-                 System.out.println( "ingrese Enter para continuar");
-                Escaner.nextLine();
-        
-         }else{ System.out.println("No se encontro ningun cliente por: " + Busqueda );
-        System.out.println("Ingrese Enter para continuar..");
-        Escaner.nextLine();
+     System.out.println("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-++-+-+");
+     System.out.println("+-+ ingrese una palabra clave para buscar el cliente +-+");
+     System.out.println("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-");
+      
+        boolean servicioEncontrado = false; 
+     String Busqueda = Escaner.nextLine();
+     for (int indice = 0; indice < Servicios.size(); indice++) {
+          if (Servicios.get(indice).contains(Busqueda)) {
+          
+        Recursos.titulo();
+    System.out.println("Gestion de Clientes -> Buscar Cliente");
+    System.out.println("***************************************");
+    System.out.println("*** se encontraron estos Servicios: ***" );
+    System.out.println("***************************************");
+    System.out.println("IDENTIFICADOR - FECHA - TIPO DE SERVICIO - CLIENTE - MONTO - DESCRIPCION");
+    System.out.println(indice + ")" + Servicios.get(indice));
+    System.out.println("\n-----------------------------------------------------------------------");	
+             System.out.println( "ingrese Enter para continuar");
+            Escaner.nextLine(); 
+             servicioEncontrado = true; 
+    
         }
-            
-      } 
-        
+      }
+            if (!servicioEncontrado){ 
+              System.out.println("No se encontro ningun cliente por: " + Busqueda );
+              System.out.println("Ingrese Enter para continuar..");
+                  Escaner.nextLine();
+      }
          
 
     }

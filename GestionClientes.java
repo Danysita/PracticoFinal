@@ -112,8 +112,8 @@ do {
     case "3" : {
          Recursos.titulo();
          Recursos.LimpiarPantalla();
-          String Busqueda = "";
-                                         
+         String Busqueda = "";
+         boolean clienteEncontrado = false;                              
         System.out.println("Gestion de Clientes -> Eliminar Cliente");
            
         
@@ -124,11 +124,6 @@ do {
         if(Busqueda.length() < 7){System.out.println("Ingrese una Cedula valida por favor!");}
         if(Busqueda.contains("-.")){System.out.println("Ingrese la Cedula sin puntos ni guion");}
        } 
-		 
-      
-
-        boolean clienteEncontrado = false; 
-        
         for (int indice = 0; indice < Clientes.size(); indice++) {
             if (Clientes.get(indice).contains(Busqueda)) {
                 Clientes.remove(indice);
@@ -162,23 +157,25 @@ do {
 		   System.out.println("+-+ ingrese una palabra clave para buscar el cliente +-+");
 		   System.out.println("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-");
 		    
-          
+          boolean clienteEncontrado = false; 
 	     String Busqueda = Escaner.nextLine();
-		 
-		  for(String contacto : Clientes){
-		  if (contacto != null && contacto.contains(Busqueda)) {
+		  for (int indice = 0; indice < Clientes.size(); indice++) {
+            if (Clientes.get(indice).contains(Busqueda)) {
             
-            Recursos.titulo();
-         System.out.println("Gestion de Clientes -> Buscar Cliente");
+          Recursos.titulo();
+          System.out.println("Gestion de Clientes -> Buscar Cliente");
 		  System.out.println("***************************************");
 		  System.out.println("*** se encontraron estos Clientes: ***" );
 		  System.out.println("***************************************");
-		  System.out.println( contacto);
-		 System.out.println("\n--------------------------------------------------");	
+          System.out.println("CEDULA - NOMBRE - APELLIDO - TELEFONO - BARRIO");
+		  System.out.println(Clientes.get(indice));
+		  System.out.println("\n--------------------------------------------------");	
                System.out.println( "ingrese Enter para continuar");
-              Escaner.nextLine();
+              Escaner.nextLine(); 
+               clienteEncontrado = true; 
 		  
-		      }else{System.out.println("No se encontro ningun cliente por: " + Busqueda );
+		      }
+              if (!clienteEncontrado){System.out.println("No se encontro ningun cliente por: " + Busqueda );
                     System.out.println("Ingrese Enter para continuar..");
                     Escaner.nextLine();
             
