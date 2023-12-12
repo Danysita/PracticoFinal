@@ -47,12 +47,32 @@ public class Recursos {
 
 }
 
-    public static boolean verificaCredenciales(Scanner scanner) {
+    public static boolean verificaCredenciales() {
+         String usuario ="";
+         String contrasenia ="";
+         boolean salir = false;
+         boolean loginok = false;
+         Scanner scanner = new Scanner(System.in);
+
+         
+         do{
+          
+     System.out.println("Verifique sus credenciasles..");
+      System.out.println("x) salir");
      System.out.println("Usuario:");
-     String usuario = scanner.nextLine();
+      usuario = scanner.nextLine();
      System.out.println("Contrase\u00F1a:");
-     String contrasenia = scanner.nextLine();
-     return usuario.equals("cursojava") && contrasenia.equals("1234");
+      contrasenia = scanner.nextLine();
+      loginok = usuario.equals("cursojava") && contrasenia.equals("proyectofinal");
+      salir = usuario.equalsIgnoreCase("x") || contrasenia.equals("x");
+      System.out.println("Presione enter para continuar");
+      scanner.nextLine();
+   return loginok;
+         }while(!loginok||!usuario.equalsIgnoreCase("x"));
+     
+      
+
+  
  }
 
     public static final void LimpiarPantalla(){

@@ -1,7 +1,4 @@
 import java.util.Scanner;
-
-import org.omg.CORBA.SystemException;
-
 import java.util.ArrayList;
 
     
@@ -11,25 +8,19 @@ public class PracticoFinal {
    ArrayList<String> Servicios = new ArrayList<>();
       
 
+  
 
+  try{
    Recursos.titulo();
-   if (Recursos.verificaCredenciales(Escaner)) {
+   
+   if (Recursos.verificaCredenciales()) {
     System.out.println("*****************************");
     System.out.println("** Credenciales Correctas! **");
     System.out.println("*****************************");
     System.out.println("Presione enter para ingresar al sistema");
     Escaner.nextLine();
-} else {
-    System.out.println("************************************************");
-    System.out.println("** hubo un error, Verifique sus credenciales! **");
-    System.out.println("************************************************");
-    return;
-}
 
-
-Recursos.titulo();
-    try{
-        String menu ="";    
+            String menu ="";    
        do{
        Recursos.LimpiarPantalla();
        Recursos.titulo();
@@ -73,6 +64,20 @@ Recursos.titulo();
           }
        }
    } while (!menu.equalsIgnoreCase("x"));
+
+   } else {
+    System.out.println("************************************************");
+    System.out.println("** hubo un error, Verifique sus credenciales! **");
+    System.out.println("************************************************");
+       System.out.println("Presione enter para ingresar al sistema");
+    Escaner.nextLine();
+}
+
+   
+
+
+  
+
    
  }catch(Exception e) {System.out.println("Ha ocurrido un error inesperado");
 }finally{System.out.println("Cerrando Programa..." );  Escaner.close();}

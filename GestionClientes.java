@@ -159,29 +159,26 @@ do {
 		    
           boolean clienteEncontrado = false; 
 	     String Busqueda = Escaner.nextLine();
+         Recursos.titulo();
 		  for (int indice = 0; indice < Clientes.size(); indice++) {
             if (Clientes.get(indice).contains(Busqueda)) {
-            
-          Recursos.titulo();
-          System.out.println("Gestion de Clientes -> Buscar Cliente");
 		  System.out.println("***************************************");
 		  System.out.println("*** se encontraron estos Clientes: ***" );
 		  System.out.println("***************************************");
           System.out.println("CEDULA - NOMBRE - APELLIDO - TELEFONO - BARRIO");
 		  System.out.println(Clientes.get(indice));
 		  System.out.println("\n--------------------------------------------------");	
-               System.out.println( "ingrese Enter para continuar");
-              Escaner.nextLine(); 
+              
                clienteEncontrado = true; 
 		  
 		      }
+              }
               if (!clienteEncontrado){System.out.println("No se encontro ningun cliente por: " + Busqueda );
                     System.out.println("Ingrese Enter para continuar..");
                     Escaner.nextLine();
-            
-            }
-			  
 	      }
+           System.out.println( "ingrese Enter para continuar");
+              Escaner.nextLine(); 
        break;
 	}
 	

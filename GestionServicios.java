@@ -120,12 +120,13 @@ do {
      System.out.println("+-+ ingrese una palabra clave para buscar el cliente +-+");
      System.out.println("+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-");
       
+        Recursos.titulo();
         boolean servicioEncontrado = false; 
      String Busqueda = Escaner.nextLine();
      for (int indice = 0; indice < Servicios.size(); indice++) {
           if (Servicios.get(indice).contains(Busqueda)) {
           
-        Recursos.titulo();
+        
     System.out.println("Gestion de Clientes -> Buscar Cliente");
     System.out.println("***************************************");
     System.out.println("*** se encontraron estos Servicios: ***" );
@@ -133,8 +134,7 @@ do {
     System.out.println("IDENTIFICADOR - FECHA - TIPO DE SERVICIO - CLIENTE - MONTO - DESCRIPCION");
     System.out.println(indice + ")" + Servicios.get(indice));
     System.out.println("\n-----------------------------------------------------------------------");	
-             System.out.println( "ingrese Enter para continuar");
-            Escaner.nextLine(); 
+           
              servicioEncontrado = true; 
     
         }
@@ -145,7 +145,8 @@ do {
                   Escaner.nextLine();
       }
          
-
+  System.out.println( "ingrese Enter para continuar");
+            Escaner.nextLine(); 
     }
 	break;
   
